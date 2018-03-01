@@ -66,7 +66,11 @@ export default class Expandable extends React.Component {
     let contentStyle = {};
     if (init) {
       contentStyle = {
-        height: animation
+        height: animation,
+        opacity: this.state.iconAnimation.interpolate({
+          inputRange: [0, 0.5, 1],
+          outputRange: [1, 0.5, 0]
+        }),
       };
     }
 
